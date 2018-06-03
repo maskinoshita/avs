@@ -20,8 +20,25 @@ class System(object):
             "payload": {
             }
         }
-
+        
+        locale_event = {
+            "header": {
+                "namespace": "Settings",
+                "name": "SettingsUpdated",
+                "messageId": uuid.uuid4().hex
+            },
+            "payload": {
+                "settings": [
+                    {
+                        "key": "locale",
+                        "value: "ja-JP"
+                    }
+                ]
+            }
+        }
+        
         def on_finished():
+            self.alexa.send_event(locale_event)
             self.alexa.state_listener.on_ready()
 
         self.alexa.send_event(event, listener=on_finished)
