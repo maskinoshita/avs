@@ -31,7 +31,7 @@ class System(object):
                 "settings": [
                     {
                         "key": "locale",
-                        "value: "ja-JP"
+                        "value": "ja-JP"
                     }
                 ]
             }
